@@ -1,10 +1,16 @@
-import type { NextPage } from 'next';
-import { TextInput } from '@mantine/core';
+import { useState } from 'react';
 
-const Home: NextPage = () => {
+import AppShell from '../layout/AppShell';
+
+import {
+  MantineProvider
+} from '@mantine/core';
+
+export default function AppShellDemo() {
+  const [opened, setOpened] = useState(false);
   return (
-    <TextInput label = "How do you feel?" placeholder='Demo' />
-  )
+    <MantineProvider>
+      <AppShell/>
+    </MantineProvider>
+  );
 }
-
-export default Home;
